@@ -7,6 +7,9 @@ require('dotenv').config();
 const cors = require('cors');
 const passportSetup = require('./routes/passport');
 const passport = require('passport');
+const GitHubStrategy = require('passport-github2').Strategy;
+const { Users } = require('./db/models');
+
 
 const authRoute = require('./routes/auth');
 
@@ -22,6 +25,34 @@ const app = express();
 const map = new Map();
 
 const PORT = process.env.PORT || 3001;
+
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+passport.deserializeUser((user, done) => {
+  done(null, user);
+});
+
+passport.use(
+  new GitHubStrategy(
+    {
+      clientID: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+      callbackURL: 'https://elbrus-state.herokuapp.com/auth/github/callback',
+    },
+
+    async (accessToken, refreshToken, profile, done) => {
+      const response = await Users.findOrCreate({
+        where: { githubId: profile.id, name: profile.displayName },
+      });
+      console.log('GitHubStrategy', response);
+      return done(null, response[0]);
+    }
+  )
+);
+
+
 
 app.use(
   session({
