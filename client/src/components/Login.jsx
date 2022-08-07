@@ -107,7 +107,7 @@ function Login() {
       </div>
       <div className="video-container">
         <video className="video" autoPlay muted playsInline loop>
-          <source src="/video/arctic.mp4" type="video/mp4" />
+          <source src="https://disk.yandex.ru/i/iucRPcd_-kLcrQ" type="video/mp4" />
         </video>
         <div className="video-bg" />
         {login ? (
