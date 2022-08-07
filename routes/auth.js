@@ -30,9 +30,10 @@ router.get(
 router.get(
   '/github/callback',
   passport.authenticate('github', {
-    successRedirect: CLIENT_URL,
-    failureRedirect: '/login/failed',
-  })
+    failureRedirect: '/login/failed'
+  }), function(req, res) {
+    res.redirect('/');
+  }
 );
 
 module.exports = router;

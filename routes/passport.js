@@ -7,7 +7,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
-      callbackURL: '/auth/github/callback',
+      callbackURL: 'https://elbrus-state.herokuapp.com/auth/github/callback',
     },
 
     async (accessToken, refreshToken, profile, done) => {
