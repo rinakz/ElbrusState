@@ -5,7 +5,6 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 require('dotenv').config();
 const cors = require('cors');
-const passportSetup = require('./routes/passport');
 const passport = require('passport');
 const GitHubStrategy = require('passport-github2').Strategy;
 const { Users } = require('./db/models');
