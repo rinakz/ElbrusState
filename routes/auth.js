@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const passport = require('passport');
 
-const CLIENT_URL = 'https://elbrus-state.herokuapp.com';
+const CLIENT_URL = 'https://elbrus-state.herokuapp.com/main';
 
 router.get('/login/success', (req, res) => {
   if (req.user) {
