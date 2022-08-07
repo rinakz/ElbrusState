@@ -1,0 +1,40 @@
+/* body{
+  background: #4520ab;
+} */
+
+.Schedule {
+  color: yellow;
+  margin: 0px -5px;
+  padding-left: 10px;
+
+  
+  display: flex;
+  overflow-x: scroll; /* Добавляем полосу прокрутки */
+  width: 1900px; /* Ширина блока */
+  height: 780px; /* Высота блока */
+
+  
+}
+
+h1{
+  color: #66EEFB;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center; 
+}
+
+h3{
+  color: #66EEFB;
+}
+
+.Room {
+  flex: 1 1 auto;
+  margin: 0 10px;
+}
+
+.Room p:first-child{
+  color: pink
+}
+p {
+  line-height: 1.7em;
+}
