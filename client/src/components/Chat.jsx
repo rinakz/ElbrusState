@@ -2,7 +2,7 @@ import React, { useEffect, useCallback, useState } from 'react';
 import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 
-const socket = new WebSocket('ws://localhost:3001');
+const socket = new WebSocket('wss://elbrus-state.herokuapp.com/');
 
 function Chat() {
   const [val, setVal] = useState('');
